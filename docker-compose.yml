@@ -1,0 +1,21 @@
+services:
+    ubuntu:
+        public: true
+        container_name: tzchz
+        image:  accetto/ubuntu-vnc-xfce-chromium-g3:latest
+        ports:
+            - 6901:6901
+        environment: 
+            - VNC_PASSWD=zouhir123:)
+            - GEOMETRY=1280x768
+            - TZ=Asia/Shanghai
+            - DEPTH=24
+        volumes: 
+            - /root/Desktop
+            - /home
+        resources:
+          cpu: 1000m
+          memory: 3072Mi
+          storage:
+            size: 2Gi
+            class: standard
